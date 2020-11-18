@@ -1,0 +1,46 @@
+%block {
+  height: 200px;
+  width: 200px;
+  transition: 0.5s;
+}
+
+%block-on {
+    transition: 0.5s;
+    box-shadow: 5px 5px 30px 5px rgba(81, 81, 81, 0.45);
+}
+.blue {
+  background-color: blue;
+  @extend %block;
+}
+.red {
+  @extend %block;
+  background-color: red;
+}
+.green {
+  @extend %block;
+  background-color: green;
+}
+.yellow {
+  @extend %block;
+  background-color: yellow;
+}
+
+.fancyBlue {
+    @extend %block-on;
+  background-color: lighten($color: blue, $amount: 20%);
+}
+
+.fancyRed {
+    @extend %block-on;
+  background-color: lighten($color: red, $amount: 20%);
+}
+
+.fancyGreen {
+    @extend %block-on;
+  background-color: lighten($color: green, $amount: 20%);
+}
+
+.fancyYellow {
+    @extend %block-on;
+  background-color: lighten($color: yellow, $amount: 20%);
+}
