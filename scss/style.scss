@@ -144,3 +144,21 @@ body {}
   @extend %block-on;
   background-color: lighten($color: yellow, $amount: 20%);
 }
+
+
+@media only screen and (max-width: 769px) {
+
+  .container-fluid {
+    padding: 0 0 20rem 0;
+  }
+
+%block{
+  height: 140px;
+}
+
+.title {
+  p{
+  font-size: 40px;
+  }
+}
+}
