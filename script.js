@@ -201,6 +201,7 @@ function nextLevel() {
                 startButtonContainer.classList.remove("button-pressed");
                 title.innerHTML = "Press Start"                
             },1000);
+
             break;
         }
     }
@@ -209,12 +210,12 @@ function nextLevel() {
 
 function playC(){
 var c = new Audio();
-c.src = "./c.mp3"
+c.src = "./C.mp3"
 c.play();
 }
 function playEb(){
 var eb = new Audio();
-eb.src = "./Eb.mp3"
+eb.src = "./eb.mp3"
 eb.play();
 }
 function playF(){
