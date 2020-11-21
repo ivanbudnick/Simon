@@ -1,19 +1,22 @@
-body {
-}
+body {}
+
 .container-fluid {
   background-color: #0d0a57;
   padding: 3rem 0 20rem 0;
   font-family: "Goldman", cursive;
 }
 
-.outer-box {
+.container-fluid-lost {
+  background-color: rgb(199, 62, 62);
 }
 
-.inner-box {
-}
+.outer-box {}
+
+.inner-box {}
 
 .title {
   margin-bottom: 0.1rem;
+
   p {
     color: white;
     text-align: center;
@@ -22,22 +25,54 @@ body {
   }
 }
 
+.no-visibility-title {
+  visibility: hidden;
+}
+
 .button-container {
   margin-top: 2rem;
-display: flex;
-justify-content: center;
-button {
-  color: white;
-  background-color: transparent;
-  border: solid 2px white;
-  border-radius: 80px;
-  padding: 0.3rem 4rem;
-  outline: 0 !important;
+  display: flex;
+  justify-content: center;
 
-}
-button:hover {
-  background-color:#383683;
+  button {
+    color: white;
+    background-color: transparent;
+    border: solid 2px white;
+    border-radius: 80px;
+    padding: 0.3rem 4rem;
+    outline: 0 !important;
   }
+
+  button:hover {
+    background-color: #383683;
+  }
+}
+
+.start-button {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+
+  button {
+    background-color: orange;
+    border-bottom: solid 5px rgb(165, 107, 0);
+    border-left: solid 3px rgb(165, 107, 0);
+    border-top: solid 1px orange;
+    border-right: solid 1px orange;
+    border-radius: 10px;
+    padding: 0.8rem 6rem;
+    outline: 0 !important;
+  }
+}
+
+.button-pressed {
+  button {
+  background-color: grey;
+  border-top: solid 6px rgb(88, 88, 88);
+  border-right: solid 3px rgb(88, 88, 88);
+  border-bottom: solid 1px grey;
+  border-left: solid 1px grey;
+}
 }
 
 %block {
@@ -51,25 +86,42 @@ button:hover {
   transition: 0.5s;
   box-shadow: 5px 5px 30px 5px #e8e8e8;
 }
+
+.high-score {
+  margin-top: 3rem;
+  color: white;
+  font-size: 20px;
+}
+
+
+
+
 .blue {
   border-top-left-radius: 50px;
   background-color: blue;
+  border-left: 3px solid  rgb(0, 0, 167);
   @extend %block;
 }
+
 .red {
   border-top-right-radius: 50px;
   @extend %block;
   background-color: red;
 }
+
 .green {
   border-bottom-left-radius: 50px;
   @extend %block;
   background-color: green;
+  border-bottom: 7px solid rgb(0, 73, 0);
+  border-left: 3px solid  rgb(0, 73, 0);
 }
+
 .yellow {
   border-bottom-right-radius: 50px;
   @extend %block;
   background-color: yellow;
+  border-bottom: 7px solid rgb(177, 177, 0);
 }
 
 .fancyBlue {
@@ -85,6 +137,7 @@ button:hover {
 .fancyGreen {
   @extend %block-on;
   background-color: lighten($color: green, $amount: 20%);
+
 }
 
 .fancyYellow {
