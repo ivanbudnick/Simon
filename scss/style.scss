@@ -29,24 +29,7 @@ body {}
   visibility: hidden;
 }
 
-.button-container {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center;
 
-  button {
-    color: white;
-    background-color: transparent;
-    border: solid 2px white;
-    border-radius: 80px;
-    padding: 0.3rem 4rem;
-    outline: 0 !important;
-  }
-
-  button:hover {
-    background-color: #383683;
-  }
-}
 
 .start-button {
   margin-top: 2rem;
@@ -63,6 +46,8 @@ body {}
     padding: 0.8rem 6rem;
     outline: 0 !important;
   }
+
+
 }
 
 .button-pressed {

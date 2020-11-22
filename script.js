@@ -16,6 +16,7 @@ var clicksArray = [];
 
 var randomNumber = 0;
 var onOff = 0;
+var isItYourTurn = 0;
 
 
 
@@ -24,17 +25,24 @@ var record = 0;
 // -----------------EVENTS
 
 startButton.addEventListener("click", begin);
-button.addEventListener("click", nextLevel);
 
-blue.addEventListener("click", clickChangeColorBlue);
-red.addEventListener("click", clickChangeColorRed);
-green.addEventListener("click", clickChangeColorGreen);
-yellow.addEventListener("click", clickChangeColorYellow);
+
+    blue.addEventListener("click", clickChangeColorBlue);
+    red.addEventListener("click", clickChangeColorRed);
+    green.addEventListener("click", clickChangeColorGreen);
+    yellow.addEventListener("click", clickChangeColorYellow);
+
+
+body.addEventListener("mouseover", isItNextLevel);
+
 
 
 // -----------------FUNCTIONS---------------------
-
-
+function isItNextLevel() {
+    if (clicksArray.length === colorsArray.length) {
+        nextLevel();
+    }
+}
 
 // -----------------BEGIN
 
@@ -49,10 +57,10 @@ function begin() {
 
 // -----------------HIGH SCORE
 
-function setHighScore(){
-   
-   if (colorsArray.length > record){
-       record = colorsArray.length;
+function setHighScore() {
+
+    if (colorsArray.length > record) {
+        record = colorsArray.length;
         highScore.innerHTML = "High Score: " + record;
     }
 }
@@ -79,9 +87,10 @@ function changeColors(color) {
 
 
 function randomize(e) {
+    isItYourTurn++;
+    console.log(isItYourTurn);
     randomNumber = Math.floor(Math.random() * 4);
     var nextColor = colors[randomNumber];
-
     colorsArray.push(nextColor);
     console.log(nextColor);
     console.log(colorsArray);
@@ -197,10 +206,10 @@ function nextLevel() {
             clicksArray = [];
             containerFluid.classList.toggle("container-fluid-lost");
             title.innerHTML = "WRONG!";
-            setTimeout(function delay(){
+            setTimeout(function delay() {
                 startButtonContainer.classList.remove("button-pressed");
-                title.innerHTML = "Press Start"                
-            },1000);
+                title.innerHTML = "Press Start"
+            }, 1000);
 
             break;
         }
@@ -208,23 +217,30 @@ function nextLevel() {
 }
 
 
-function playC(){
-var c = new Audio();
-c.src = "./C.mp3"
-c.play();
+
+// -----------------SOUNDS
+
+
+function playC() {
+    var c = new Audio();
+    c.src = "./C.mp3"
+    c.play();
 }
-function playEb(){
-var eb = new Audio();
-eb.src = "./eb.mp3"
-eb.play();
+
+function playEb() {
+    var eb = new Audio();
+    eb.src = "./eb.mp3"
+    eb.play();
 }
-function playF(){
-var f = new Audio();
-f.src = "./f.mp3"
-f.play();
+
+function playF() {
+    var f = new Audio();
+    f.src = "./f.mp3"
+    f.play();
 }
-function playG(){
-var g = new Audio();
-g.src = "./g.mp3"
-g.play();
+
+function playG() {
+    var g = new Audio();
+    g.src = "./g.mp3"
+    g.play();
 }
